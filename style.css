@@ -6,7 +6,9 @@ header{
 /* header */
 
 /* body */
-
+body{
+    background-color: slategrey;
+}
 /* body */
 
 /* footer */

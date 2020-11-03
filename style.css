@@ -43,3 +43,7 @@ footer{
     font-size: 5em;
     text-transform: capitalize;
 }
+
+img{
+    display: none;
+}

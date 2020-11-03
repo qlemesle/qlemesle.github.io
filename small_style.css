@@ -1,46 +1,18 @@
-header{
-    font-size: 5em;
-    text-transform: capitalize;
-}
-
-body{
-    background-color: rgb(202, 224, 245);
-}
 
 nav ul{
     display: none;
-    list-style-type: none;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-}
-nav ul li{
-    background-color: whitesmoke;
-    width: 20%;
-    text-align: center;
-    border-style: solid;
-    border-width: 0.01em;
-}
-
-section{
-    display: flex;
-    flex-direction: row;
 }
 
 article{
     width: 100%;
-    background-color: tomato;
 }
 
 aside{
-    width: 20%;
-    background-color: black;
-    color: white;
     display: none;
 }
 
-footer{
-    font-size: 5em;
-    text-transform: capitalize;
+img{
+    display: block;
+    width: 10%;
 }

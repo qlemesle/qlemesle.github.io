@@ -1,19 +1,44 @@
-/* header */
 header{
-    font-size: 10em;
+    font-size: 5em;
     text-transform: capitalize;
 }
-/* header */
 
-/* body */
 body{
-    background-color: slategrey;
+    background-color: rgb(202, 224, 245);
 }
-/* body */
 
-/* footer */
+nav ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+nav ul li{
+    background-color: whitesmoke;
+    width: 20%;
+    text-align: center;
+    border-style: solid;
+    border-width: 0.01em;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+article{
+    width: 80%;
+    background-color: tomato;
+}
+
+aside{
+    width: 20%;
+    background-color: black;
+    color: white;
+}
+
 footer{
-    font-size: 10em;
+    font-size: 5em;
     text-transform: capitalize;
 }
-/* footer */

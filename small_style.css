@@ -12,7 +12,13 @@ aside{
     display: none;
 }
 
-img{
+#burger{
     display: block;
+    width: 10%;
+}
+
+#left_arrow{
+    display: block;
+    background-color: tomato;
     width: 10%;
 }

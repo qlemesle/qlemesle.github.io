@@ -23,7 +23,7 @@ nav ul li{
     border-width: 0.01em;
 }
 
-section{
+main{
     display: flex;
     flex-direction: row;
 }
@@ -44,6 +44,10 @@ footer{
     text-transform: capitalize;
 }
 
-img{
+#burger{
+    display: none;
+}
+
+#left_arrow{
     display: none;
 }

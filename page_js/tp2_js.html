@@ -43,31 +43,46 @@
 
         let canvas = document.getElementById('myCanvas');
         let ctx = canvas.getContext('2d');
+        ctx.fillStyle = "red";
         let intervalSquare;
         
-        function mouveSquare() {
-            intervalSquare = setInterval(flashSquare, 50);
+        function mouveSquare_to_right() {
+            intervalSquare = setInterval(to_right_Square, 50);
+        }
+        function mouveSquare_to_left() {
+            intervalSquare = setInterval(to_left_Square, 50);
         }
 
         let mvment = 0;
         
-        function flashSquare() {
-            ctx.clearRect(0,0,500,200);
-            ctx.rect(mvment, 10, 100, 100);
-            ctx.fillStyle = "red";
-            ctx.fill();
+        function to_right_Square() {
+            ctx.clearRect(10,10,mvment+100,mvment+100);
+            ctx.fillRect(10+mvment, 10, 100, 100);
             mvment = mvment + 10;
             if(mvment >= (500-100)){
-                stopSquare();
+                stopSquare_r();
+            }
+        }
+
+        function to_left_Square() {
+            ctx.clearRect(10,10,mvment+100,mvment+100);
+            ctx.fillRect(mvment - 10, 10, 100, 100);
+            mvment = mvment - 10;
+            if(mvment <= (10)){
+                stopSquare_l();
             }
         }
  
-        function stopSquare() {
+        function stopSquare_r() {
             clearInterval(intervalSquare);
-            console.log("dessin stop");
+            mouveSquare_to_left();
+        }
+        function stopSquare_l() {
+            clearInterval(intervalSquare);
+            mouveSquare_to_right();
         }
 
-        mouveSquare();
+        mouveSquare_to_right();
     });
     
 </script>

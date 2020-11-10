@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Titre de la page</title>
+    </head>
+        <body>
+            <!--             <form>
+                <input type="text" name="sec" value="11" size=3>
+            </form>
+            -->
+        </body>
+</html>
+<script type="text/javascript">
+
+    /*
+    function ajoute() {
+        if(document.forms[0].sec.value != 0){
+            document.forms[0].sec.value=parseInt(document.forms[0].sec.value)-1;
+            setTimeout('ajoute()',1000);
+        }else{
+            console.log("0 atteint");
+        }
+    }*/
+    window.addEventListener('load', (event) => {
+        let chrono = document.createElement("h1");
+        let time = 10;
+        chrono.innerHTML = time;
+
+        let nIntervId;
+        
+        function changeChrono() {
+            nIntervId = setInterval(flashChrono, 1000);
+        }
+
+        function flashChrono() {
+            //let oElem = document.getElementById('myChrono');
+            //oElem.style.color = oElem.style.color == 'red' ? 'blue' : 'red';
+            // oElem.style.color == 'red' ? 'blue' : 'red' is a conditional or ternary operator.
+            time = time - 1;
+            if(time > -1){
+                chrono.innerHTML = time;
+            }else{
+                chrono.innerHTML = "temps écoulé";
+                stopChrono();
+            }
+        }
+ 
+        function stopChrono() {
+            clearInterval(nIntervId);
+            console.log("chrono arrêté");
+        }
+
+        changeChrono();
+        document.body.appendChild(chrono);
+    });
+</script>

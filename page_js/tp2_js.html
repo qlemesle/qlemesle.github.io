@@ -6,6 +6,7 @@
     </head>
         <body>
             <canvas id="myCanvas" width="500" height="200"></canvas>
+            <canvas id="myCanvas2" width="500" height="200"></canvas>
         </body>
 </html>
 <script type="text/javascript">
@@ -23,6 +24,7 @@
 
         function flashChrono() {
             time = time - 1;
+            if(time == 8){mouveSquare_to_right2();}
             if(time > -1){
                 chrono.innerHTML = time;
             }else{
@@ -83,6 +85,49 @@
         }
 
         mouveSquare_to_right();
+
+        /* ------------------------------------exercice 3------------------------------------------- */
+
+        let canvas2 = document.getElementById('myCanvas2');
+        let ctx2 = canvas2.getContext('2d');
+        ctx2.fillStyle = "red";
+        let intervalSquare2;
+        
+        function mouveSquare_to_right2() {
+            intervalSquare2 = setInterval(to_right_Square2, 50);
+        }
+        function mouveSquare_to_left2() {
+            intervalSquare2 = setInterval(to_left_Square2, 50);
+        }
+
+        let mvment2 = 0;
+        
+        function to_right_Square2() {
+            ctx2.clearRect(10,10,mvment2+100,mvment2+100);
+            ctx2.fillRect(10+mvment2, 10, 100, 100);
+            mvment2 = mvment2 + 10;
+            if(mvment2 >= (500-100)){
+                stopSquare_r2();
+            }
+        }
+
+        function to_left_Square2() {
+            ctx2.clearRect(10,10,mvment2+100,mvment2+100);
+            ctx2.fillRect(mvment2 - 10, 10, 100, 100);
+            mvment2 = mvment2 - 10;
+            if(mvment2 <= (10)){
+                stopSquare_l2();
+            }
+        }
+ 
+        function stopSquare_r2() {
+            clearInterval(intervalSquare2);
+            mouveSquare_to_left2();
+        }
+        function stopSquare_l2() {
+            clearInterval(intervalSquare2);
+            mouveSquare_to_right2();
+        }
     });
     
 </script>

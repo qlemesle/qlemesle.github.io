@@ -67,17 +67,17 @@
         function to_right_Square() {
             ctx.clearRect(10,10,mvment+100,mvment+100);
             ctx.fillRect(10+mvment, 10, 100, 100);
-            mvment = mvment + 10;
+            mvment = mvment + 40;
             if(mvment >= (500-100)){
                 stopSquare_r();
             }
         }
 
         function to_left_Square() {
-            ctx.clearRect(10,10,mvment+100,mvment+100);
-            ctx.fillRect(mvment - 10, 10, 100, 100);
-            mvment = mvment - 10;
-            if(mvment <= (10)){
+            ctx.clearRect(10,10,mvment+200,mvment+200);
+            ctx.fillRect(mvment-10, 10, 100, 100);
+            mvment = mvment - 40;
+            if(mvment == 0){
                 stopSquare_l();
             }
         }
@@ -178,10 +178,10 @@
             return Math.floor(Math.random() * Math.floor(max));
         }
 
-        let couleurs = ['black', 'red', 'yellow', 'blue', 'green', 'orange', 'pink', 'gray'];
+        let couleurs = ['black', 'red', 'yellow', 'blue', 'green', 'orange', 'pink', 'gray', 'aliceblue' , 'hotpink', 'lavender' , 'aqua', 'blueviolet', 'chocolate', 'chartreuse', 'cornflowerblue', 'crimson', 'darkblue', 'darkgoldenrod', 'darkgray' ,'deeppink', 'deepskyblue', 'dodgerblue'];
 
         function changerCouleur(le_ctx){
-            le_ctx.fillStyle = couleurs[getRandomInt(7)];
+            le_ctx.fillStyle = couleurs[getRandomInt(couleurs.length)];
         }
         /* ------------------------------------exercice 4------------------------------------------- */
 

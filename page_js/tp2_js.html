@@ -52,6 +52,7 @@
         let canvas = document.getElementById('myCanvas');
         let ctx = canvas.getContext('2d');
         ctx.fillStyle = "red";
+
         let intervalSquare;
         
         function mouveSquare_to_right() {
@@ -83,10 +84,12 @@
  
         function stopSquare_r() {
             clearInterval(intervalSquare);
+            changerCouleur(ctx);
             mouveSquare_to_left();
         }
         function stopSquare_l() {
             clearInterval(intervalSquare);
+            changerCouleur(ctx);
             mouveSquare_to_right();
         }
 
@@ -96,7 +99,7 @@
 
         let canvas2 = document.getElementById('myCanvas2');
         let ctx2 = canvas2.getContext('2d');
-        ctx2.fillStyle = "red";
+        ctx2.fillStyle = "green";
         let intervalSquare2;
         
         function mouveSquare_to_right2() {
@@ -128,10 +131,12 @@
  
         function stopSquare_r2() {
             clearInterval(intervalSquare2);
+            changerCouleur(ctx2);
             mouveSquare_to_left2();
         }
         function stopSquare_l2() {
             clearInterval(intervalSquare2);
+            changerCouleur(ctx2);
             mouveSquare_to_right2();
         }
 
@@ -162,11 +167,21 @@
 
         interTimer = setInterval(flashTimer, 1000);
 
-        /* ------------------------------------bouton stoooooop------------------------------------------- */
+        /* ------------------------------------truc en plus------------------------------------------- */
         document.getElementById("bouton").onclick = function stopTonCube(){
             console.log("stoooooooooooooop");
             clearInterval(intervalSquare);
             clearInterval(intervalSquare2);
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        let couleurs = ['black', 'red', 'yellow', 'blue', 'green', 'orange', 'pink', 'gray'];
+
+        function changerCouleur(le_ctx){
+            le_ctx.fillStyle = couleurs[getRandomInt(7)];
         }
         /* ------------------------------------exercice 4------------------------------------------- */
 
@@ -174,7 +189,7 @@
         function bougeTonCube() {
             let canvas3 = document.getElementById('myCanvas3');
             let ctx3 = canvas3.getContext('2d');
-            ctx3.fillStyle = "red";
+            changerCouleur(ctx3);
             let intervalSquare3;
 
             function mouveSquare_to_right3() {
@@ -205,7 +220,7 @@
         function jbougeMesCubes() {
             let canvas3 = document.getElementById('myCanvas4');
             let ctx3 = canvas3.getContext('2d');
-            ctx3.fillStyle = "red";
+            changerCouleur(ctx3);
             let intervalSquare3;
 
             function mouveSquare_to_right3() {

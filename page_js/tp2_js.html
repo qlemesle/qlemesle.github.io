@@ -140,9 +140,9 @@
             timerSecondes ++;
             if(timerSecondes == 2){mouveSquare_to_right2();}
 
-            if(timerSecondes == 1){bougeTonCube();}
-            if(timerSecondes == 2){bougeTonCube();}
-            if(timerSecondes == 3){bougeTonCube();}
+            if(timerSecondes == 4){bougeTonCube();}
+            if(timerSecondes == 5){bougeTonCube();}
+            if(timerSecondes == 6){bougeTonCube();}
 
             if(timerSecondes > 10){
                 stopTimer();
@@ -172,7 +172,7 @@
             let mvment3 = 0;
             
             function to_right_Square3() {
-                ctx3.clearRect(mvment3,10,mvment3+100,mvment3+100);
+                ctx3.clearRect(mvment3,0,100,mvment3+100);
                 ctx3.fillRect(10+mvment3, 10, 100, 100);
                 mvment3 = mvment3 + 10;
                 if(mvment3 >= (500)){
@@ -181,8 +181,8 @@
             }
 
             function stopSquare3() {
-                ctx3.clearRect(10,10,mvment3+100,mvment3+100);
                 clearInterval(intervalSquare3);
+                console.log("J'arrête de bouger mon cube")
             }
 
             mouveSquare_to_right3();

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Test jeu</title>
+    </head>
+    <body>
+        <h1>...</h1>
+    </body>
+</html>
+
+<script type="text/javascript">
+
+    window.addEventListener('load', (event) => {
+
+        var mainloop = function() {
+        updateGame();
+        drawGame();
+        };
+
+        var animFrame = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame    ||
+            window.oRequestAnimationFrame      ||
+            window.msRequestAnimationFrame     ||
+            null ;
+
+        var recursiveAnim = function() {
+            mainloop();
+            animFrame( recursiveAnim );
+        };
+
+        // start the mainloop
+        animFrame( recursiveAnim );
+
+    });
+
+</script>
